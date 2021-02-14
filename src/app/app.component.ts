@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gyanLok';
-
-  data:any =["test1","test2","test3","test4"];
+  
 }
