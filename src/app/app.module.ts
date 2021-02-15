@@ -4,18 +4,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
+import { CommonCellComponent } from './common-cell/common-cell.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    PageNotFoundComponent
+    AppComponent,
+    PageNotFoundComponent,
+    CommonCellComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

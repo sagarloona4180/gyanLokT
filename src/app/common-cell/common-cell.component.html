@@ -1,0 +1,75 @@
+
+
+<ng-container [ngSwitch]="value">
+
+
+  <div   *ngSwitchCase="'Input Box'">
+
+    <input/>
+  
+  </div>
+  
+  
+  
+  
+  <div   *ngSwitchCase="'background'">
+  
+     <div class="background">
+      sagar
+     </div>  
+    
+    </div>
+  
+  
+    <div *ngSwitchCase="'High my Name'">
+  
+      <div class="hightlight">
+       sagar
+      </div>  
+     
+     </div>
+  
+  
+  
+     <div  *ngSwitchCase="'image'">
+  
+         <img src="dsdsd" />
+     
+     </div>
+  
+  
+  
+  
+  
+  
+  
+  <div   *ngSwitchCase="'Dropdown'">
+    
+      <div ngbDropdown container="body" class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem>Action - 1</button>
+          <button ngbDropdownItem>Another Action</button>
+          <button ngbDropdownItem>Something else is here</button>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+  
+  <div   *ngSwitchDefault>
+
+    {{value}}
+ 
+ </div>
+
+</ng-container>
+
+
+
+
+
