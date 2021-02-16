@@ -1,1 +1,15 @@
-<ag-grid-angular suppressRowClickSelection  (rowSelected)="onRowSelection($event)"  class="ag-theme-alpine" style="height:500px;width: 100%;" [gridOptions]="gridOptions"> </ag-grid-angular>
+<ag-grid-angular suppressRowClickSelection 
+ (rowSelected)="onRowSelection($event)" 
+ (cellValueChanged)="onCellValueChanged($event)"
+ class="ag-theme-alpine" style="height:500px;width: 100%;" [gridOptions]="gridOptions"> </ag-grid-angular>
+
+
+
+
+<button (click)="edit()"> please start Editing</button> 
+
+<button (click)="stop()">Stop </button>
+
+
+
+<button (click)="convert('')">save </button>

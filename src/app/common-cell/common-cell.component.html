@@ -1,7 +1,11 @@
 
 
 <ng-container [ngSwitch]="value">
+  <div   *ngSwitchCase="'2001-01-01T00:00:00'">
 
+    {{value | date :'dd-MMM-yy hh:mm:ss' }}
+  
+  </div>
 
   <div   *ngSwitchCase="'Input Box'">
 

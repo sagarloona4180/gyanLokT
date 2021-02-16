@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { GridOptions } from 'ag-grid-community';
 import { CommonCellComponent } from 'src/app/common-cell/common-cell.component';
 
+
 @Component({
   selector: 'app-user-component',
   templateUrl: './user-component.component.html',
@@ -20,7 +21,8 @@ export class UserComponentComponent implements OnInit {
         headerName: 'Column 1',
         field: 'column1',
         checkboxSelection: true,
-        headerCheckboxSelection: true
+        headerCheckboxSelection: true,
+        colId:'column1'
      
 
 
@@ -28,12 +30,13 @@ export class UserComponentComponent implements OnInit {
       {
         headerName: 'Column 2',
         field: 'column2',
-    
+        colId:'column2'    
 
       },
       {
         headerName: 'Column 3',
         field: 'column3',
+        colId:'column3'
       
 
       }];
@@ -42,15 +45,21 @@ export class UserComponentComponent implements OnInit {
       width: 250,
       suppressMovable:true,
       resizable:true,
-      // editable :true,
-      cellRendererFramework : CommonCellComponent
+       editable :true,
+       cellRendererFramework:CommonCellComponent
     }
 
 
     this.gridOptions.rowData = [];
 
     this.gridOptions.rowSelection = 'multiple';
+    // this.gridOptions.singleClickEdit=true;
+
+    this.gridOptions.suppressClickEdit = true;
   }
+
+
+
 
 
 
@@ -76,4 +85,38 @@ export class UserComponentComponent implements OnInit {
     })
   }
 
+
+
+
+  edit(){
+    this.gridOptions.api?.startEditingCell({
+      rowIndex: 1,
+      colKey: 'column1'
+    })
+      
+    
+  }
+
+  stop(){  
+
+   console.log( this.gridOptions.api?.getDisplayedRowAtIndex(1));
+    this.gridOptions.api?.stopEditing();
+  }
+
+  onCellValueChanged(e:any){
+    console.log(e);
+  }
+
+  save(){
+    const rowData:any = [];
+    this.gridOptions.api?.forEachNode(node => rowData.push(node.data));
+    console.log(rowData);
+  }
+
+  convert(v:string){
+
+  //  const  datevalue = '0001-01-01T00:00:00';
+  //   this.date.transform(datevalue, 'dd-mm-yy');
+  //   console.log(   this.date.transform(datevalue, 'dd-mm-yy hh:mm:ss'));
+  }
 }

@@ -1,6 +1,6 @@
 {
   "Items":  [{
-        "column1":"Test1",
+        "column1":"2001-01-01T00:00:00",
         "column2":"Test2",
         "column3":"Test3"
       },
